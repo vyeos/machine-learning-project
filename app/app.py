@@ -6,12 +6,18 @@ Uses ONLY the produced artifacts/results - no re-fitting here.
 from pathlib import Path
 
 import json
+import sys
 
 import pandas as pd
 import streamlit as st
 import joblib
 
 ROOT = Path(__file__).resolve().parents[1]
+# Streamlit Community Cloud runs this file with its own sys.path setup; make
+# sure the repo root is importable so joblib can resolve src.preprocessing
+# (the FeatureEngineer class stored inside the model artifact).
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 RESULTS = ROOT / "results"
 ARTIFACTS = ROOT / "artifacts"
 FIGS = RESULTS / "figures"
