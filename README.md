@@ -24,7 +24,6 @@ python -m src.train                  # ~6.2 min on a 20-core machine; writes res
 # 4. Interactive outputs
 jupyter lab Cybersecurity_Intrusion_Detection.ipynb   # fully executed notebook (repo root)
 streamlit run app\\app.py                                        # 4-page dashboard
-python -m app.api                                                # HTML demo frontend (localhost:8000)
 pytest                            # pipeline smoke tests
 ```
 
@@ -59,8 +58,7 @@ Cybersecurity_Intrusion_Detection/          <- repo root (what GitHub sees)
 ├── README.md                 this file
 ├── requirements.txt          pinned environment (Python 3.12)
 ├── Cybersecurity_Intrusion_Detection.ipynb   fully executed end-to-end notebook
-├── app/                      Streamlit dashboard (app.py) + demo frontend (api.py)
-├── frontend/                 Single-page demo UI (index.html; served by app/api.py)
+├── app/                      Streamlit dashboard (app.py, 4 pages incl. live prediction)
 ├── artifacts/                intrusion_detection_model.joblib (~2 MB) + model_metadata.json
 │                             (the optional ~52 MB multiclass_attack_classifier.joblib is
 │                              git-ignored - rebuild it with `python -m src.train`)
