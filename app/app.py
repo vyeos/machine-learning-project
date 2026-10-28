@@ -43,7 +43,7 @@ def load_csv(name: str):
     return pd.read_csv(path) if path.exists() else pd.DataFrame()
 
 
-def figure(name: str, caption: str):
+def fig(name: str, caption: str):
     p = FIGS / name
     if p.exists():
         st.image(str(p), caption=caption, use_container_width=True)
