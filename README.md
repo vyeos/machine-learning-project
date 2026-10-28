@@ -22,7 +22,7 @@ python -m src.download_data          # downloads + verifies UNSW-NB15, ~830k com
 python -m src.train                  # ~6.2 min on a 20-core machine; writes results/ + artifacts/
 
 # 4. Interactive outputs
-jupyter lab notebooks\\Cybersecurity_Intrusion_Detection.ipynb   # fully executed notebook
+jupyter lab Cybersecurity_Intrusion_Detection.ipynb   # fully executed notebook (repo root)
 streamlit run app\\app.py                                        # 4-page dashboard
 python -m app.api                                                # HTML demo frontend (localhost:8000)
 pytest                            # pipeline smoke tests
@@ -55,21 +55,26 @@ pytest                            # pipeline smoke tests
 ## Repository layout
 
 ```
-Cybersecurity_Intrusion_Detection/
-├── app/                     Streamlit dashboard (app.py) + demo frontend (api.py)
-├── artifacts/               Fitted pipeline + metadata (joblib/json)
-├── data/                    UNSW-NB15 CSVs (downloaded; not for redistribution)
-│   (docs/ was folded into README + results; no separate dir)
-├── notebooks/               Fully executed end-to-end notebook
-├── proposal/                Project proposal (DOCX)
-├── report/                  Final report (DOCX)
-├── presentation/            Slide deck (PPTX)
-├── results/                 findings.md, model_comparison.csv, figures/ ...
+Cybersecurity_Intrusion_Detection/          <- repo root (what GitHub sees)
+├── README.md                 this file
+├── requirements.txt          pinned environment (Python 3.12)
+├── Cybersecurity_Intrusion_Detection.ipynb   fully executed end-to-end notebook
+├── app/                      Streamlit dashboard (app.py) + demo frontend (api.py)
 ├── frontend/                 Single-page demo UI (index.html; served by app/api.py)
-├── scripts/                 Builders (notebook/documents) + packaging
-├── src/                     data_loading, preprocessing, eda, evaluate, train, predict
-└── tests/                   pytest smoke tests
+├── artifacts/                intrusion_detection_model.joblib (~2 MB) + model_metadata.json
+│                             (the optional ~52 MB multiclass_attack_classifier.joblib is
+│                              git-ignored - rebuild it with `python -m src.train`)
+├── data/                     UNSW-NB15 CSVs (git-ignored; recreated by src/download_data.py)
+├── results/                  findings.md, model_comparison.csv, JSON tuning logs, figures/ ...
+├── scripts/                  Builders (notebook/report/documents) + package_project.py (ZIP)
+├── src/                      data_loading, download_data, preprocessing, eda, evaluate,
+│                             train, predict (IntrusionPredictor + --demo/--batch CLI)
+└── tests/                    pytest smoke tests
 ```
+
+Course documents (project proposal `DOCX`, final report `DOCX` + `PDF`, slide deck
+`PPTX`, `DEPLOYMENT.md`, `Viva_Preparation.md`) live **one level above this repo**
+in the course's `ML Project/` folder - they are not part of the GitHub push.
 
 ## Headline results (verify against `results/findings.md`)
 
@@ -84,4 +89,5 @@ Cybersecurity_Intrusion_Detection/
 
 - Scores are deterministic (`random_state=42`).
 - Data is downloaded, not shipped - see `src/download_data.py`.
-- See `Viva_Preparation.md` for an examiner-style Q&A review list.
+- See `Viva_Preparation.md` (in the parent `ML Project/` folder, next to this
+  repo) for an examiner-style Q&A review list.
