@@ -24,6 +24,7 @@ python -m src.train                  # ~6.2 min on a 20-core machine; writes res
 # 4. Interactive outputs
 jupyter lab notebooks\\Cybersecurity_Intrusion_Detection.ipynb   # fully executed notebook
 streamlit run app\\app.py                                        # 4-page dashboard
+python -m app.api                                                # HTML demo frontend (localhost:8000)
 pytest                            # pipeline smoke tests
 ```
 
@@ -55,15 +56,16 @@ pytest                            # pipeline smoke tests
 
 ```
 Cybersecurity_Intrusion_Detection/
-├── app/                     Streamlit dashboard (app.py)
+├── app/                     Streamlit dashboard (app.py) + demo frontend (api.py)
 ├── artifacts/               Fitted pipeline + metadata (joblib/json)
 ├── data/                    UNSW-NB15 CSVs (downloaded; not for redistribution)
-├── docs/                    Architecture diagram + notes
+│   (docs/ was folded into README + results; no separate dir)
 ├── notebooks/               Fully executed end-to-end notebook
 ├── proposal/                Project proposal (DOCX)
 ├── report/                  Final report (DOCX)
 ├── presentation/            Slide deck (PPTX)
 ├── results/                 findings.md, model_comparison.csv, figures/ ...
+├── frontend/                 Single-page demo UI (index.html; served by app/api.py)
 ├── scripts/                 Builders (notebook/documents) + packaging
 ├── src/                     data_loading, preprocessing, eda, evaluate, train, predict
 └── tests/                   pytest smoke tests
