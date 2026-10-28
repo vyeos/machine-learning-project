@@ -6,7 +6,7 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-EXCLUDE_DIRS = {"data", ".venv", "venv", "__pycache__", ".pytest_cache", ".ipynb_checkpoints"}
+EXCLUDE_DIRS = {"data", ".venv", "venv", "__pycache__", ".pytest_cache", ".ipynb_checkpoints", ".git"}
 EXCLUDE_PARTS = {".joblib_memmapping_folder"}
 ZIP_NAME = ROOT / f"Cybersecurity_Intrusion_Detection_{datetime.now():%Y%m%d}.zip"
 
