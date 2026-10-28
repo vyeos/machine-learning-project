@@ -1,0 +1,18 @@
+{
+  "tuner": "GridSearchCV",
+  "search_time_s": 8.05780816078186,
+  "best_params": {
+    "C": 3.0
+  },
+  "best_cv_f1_on_subsample": 0.9118895131665438,
+  "mean_train_f1_of_best": 0.9124374184938029,
+  "space": {
+    "model__C": [
+      0.01,
+      0.1,
+      1.0,
+      3.0
+    ]
+  },
+  "n_candidates": 4
+}

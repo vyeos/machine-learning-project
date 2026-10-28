@@ -1,0 +1,91 @@
+{
+  "classes": [
+    "Analysis",
+    "Backdoor",
+    "DoS",
+    "Exploits",
+    "Fuzzers",
+    "Generic",
+    "Normal",
+    "Reconnaissance",
+    "Shellcode",
+    "Worms"
+  ],
+  "n_classes": 10,
+  "accuracy": 0.6813511149978138,
+  "macro_f1": 0.5128783911131926,
+  "weighted_f1": 0.7345036288096759,
+  "train_time_s": 3.9301438331604004,
+  "per_class": {
+    "Analysis": {
+      "precision": 0.054411764705882354,
+      "recall": 0.3825701624815362,
+      "f1-score": 0.09527312856354607,
+      "support": 677.0
+    },
+    "Backdoor": {
+      "precision": 0.051269120860648845,
+      "recall": 0.5231560891938251,
+      "f1-score": 0.09338640538885487,
+      "support": 583.0
+    },
+    "DoS": {
+      "precision": 0.5767918088737202,
+      "recall": 0.123991195891416,
+      "f1-score": 0.2041062801932367,
+      "support": 4089.0
+    },
+    "Exploits": {
+      "precision": 0.7970981377813321,
+      "recall": 0.6267517067912325,
+      "f1-score": 0.7017349761126477,
+      "support": 11132.0
+    },
+    "Fuzzers": {
+      "precision": 0.2578838426884208,
+      "recall": 0.698779280765424,
+      "f1-score": 0.3767342582710779,
+      "support": 6062.0
+    },
+    "Generic": {
+      "precision": 0.9978765109441359,
+      "recall": 0.9711726988500874,
+      "f1-score": 0.9843435292853882,
+      "support": 18871.0
+    },
+    "Normal": {
+      "precision": 0.9938664040114613,
+      "recall": 0.5999729729729729,
+      "f1-score": 0.7482472697856276,
+      "support": 37000.0
+    },
+    "Reconnaissance": {
+      "precision": 0.8821212121212121,
+      "recall": 0.8326659038901602,
+      "f1-score": 0.8566804002354326,
+      "support": 3496.0
+    },
+    "Shellcode": {
+      "precision": 0.2271231073074391,
+      "recall": 0.9126984126984127,
+      "f1-score": 0.3637322087506589,
+      "support": 378.0
+    },
+    "Worms": {
+      "precision": 0.7045454545454546,
+      "recall": 0.7045454545454546,
+      "f1-score": 0.7045454545454546,
+      "support": 44.0
+    }
+  },
+  "weak_classes_recall_under_0p5": [
+    [
+      "Analysis",
+      0.3825701624815362
+    ],
+    [
+      "DoS",
+      0.123991195891416
+    ]
+  ]
+}

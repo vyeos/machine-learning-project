@@ -1,0 +1,41 @@
+{
+  "tuner": "RandomizedSearchCV",
+  "search_time_s": 99.38763856887817,
+  "best_params": {
+    "n_estimators": 400,
+    "min_samples_leaf": 2,
+    "max_features": 0.3,
+    "max_depth": 16,
+    "class_weight": null
+  },
+  "best_cv_f1_on_subsample": 0.9345980623257293,
+  "mean_train_f1_of_best": 0.9714488330635467,
+  "space": {
+    "model__n_estimators": [
+      200,
+      300,
+      400
+    ],
+    "model__max_depth": [
+      16,
+      24,
+      32,
+      null
+    ],
+    "model__min_samples_leaf": [
+      1,
+      2,
+      5,
+      10
+    ],
+    "model__max_features": [
+      "sqrt",
+      0.3
+    ],
+    "model__class_weight": [
+      "balanced_subsample",
+      null
+    ]
+  },
+  "n_candidates": 12
+}

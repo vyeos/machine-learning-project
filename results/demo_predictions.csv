@@ -1,0 +1,11 @@
+id,attack_cat,label,predicted_label,attack_probability,correct,model
+18943,Generic,1,1,0.9992,True,HistGradientBoosting (tuned)
+28229,Normal,0,0,0.0001,True,HistGradientBoosting (tuned)
+46464,Backdoor,1,1,0.9925,True,HistGradientBoosting (tuned)
+47880,Exploits,1,1,0.9976,True,HistGradientBoosting (tuned)
+53131,Fuzzers,1,1,0.9971,True,HistGradientBoosting (tuned)
+55615,Generic,1,1,0.7242,True,HistGradientBoosting (tuned)
+67702,Normal,0,1,0.9055,False,HistGradientBoosting (tuned)
+74407,Normal,0,0,0.3996,True,HistGradientBoosting (tuned)
+74894,Normal,0,0,0.004,True,HistGradientBoosting (tuned)
+77521,Normal,0,1,0.5889,False,HistGradientBoosting (tuned)

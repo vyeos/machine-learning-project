@@ -1,0 +1,46 @@
+column,dtype_train,non_missing_train,non_missing_test,unique_train,unique_test,role
+id,int64,175341,82332,175341,82332,identifier
+dur,float64,175341,82332,74039,39888,input feature
+proto,str,175341,82332,133,131,input feature
+service,str,175341,82332,13,13,input feature
+state,str,175341,82332,9,7,input feature
+spkts,int64,175341,82332,480,420,input feature
+dpkts,int64,175341,82332,443,436,input feature
+sbytes,int64,175341,82332,7214,4489,input feature
+dbytes,int64,175341,82332,6660,4034,input feature
+rate,float64,175341,82332,76991,40616,input feature
+sttl,int64,175341,82332,11,11,input feature
+dttl,int64,175341,82332,6,8,input feature
+sload,float64,175341,82332,80885,42873,input feature
+dload,float64,175341,82332,77474,40614,input feature
+sloss,int64,175341,82332,409,253,input feature
+dloss,int64,175341,82332,370,311,input feature
+sinpkt,float64,175341,82332,76161,39970,input feature
+dinpkt,float64,175341,82332,74245,37617,input feature
+sjit,float64,175341,82332,77532,39944,input feature
+djit,float64,175341,82332,76831,38381,input feature
+swin,int64,175341,82332,13,11,input feature
+stcpb,int64,175341,82332,75265,39219,input feature
+dtcpb,int64,175341,82332,75089,39108,input feature
+dwin,int64,175341,82332,7,14,input feature
+tcprtt,float64,175341,82332,43319,26130,input feature
+synack,float64,175341,82332,40142,24934,input feature
+ackdat,float64,175341,82332,37708,24020,input feature
+smean,int64,175341,82332,1357,1282,input feature
+dmean,int64,175341,82332,1328,1222,input feature
+trans_depth,int64,175341,82332,11,8,input feature
+response_body_len,int64,175341,82332,2386,1190,input feature
+ct_srv_src,int64,175341,82332,52,57,input feature
+ct_state_ttl,int64,175341,82332,5,7,input feature
+ct_dst_ltm,int64,175341,82332,50,50,input feature
+ct_src_dport_ltm,int64,175341,82332,47,50,input feature
+ct_dst_sport_ltm,int64,175341,82332,32,33,input feature
+ct_dst_src_ltm,int64,175341,82332,54,57,input feature
+is_ftp_login,int64,175341,82332,4,3,input feature
+ct_ftp_cmd,int64,175341,82332,4,3,input feature
+ct_flw_http_mthd,int64,175341,82332,11,8,input feature
+ct_src_ltm,int64,175341,82332,50,50,input feature
+ct_srv_dst,int64,175341,82332,52,57,input feature
+is_sm_ips_ports,int64,175341,82332,2,2,input feature
+attack_cat,str,175341,82332,10,10,attack annotation
+label,int64,175341,82332,2,2,target

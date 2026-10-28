@@ -1,0 +1,18 @@
+# dataset is downloaded, never shipped / committed
+data/
+
+# caches
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# local virtual env
+.venv/
+
+# generated ZIPs and heavy throwaway artifacts (optional excludes)
+*.zip
+
+# the 52 MB optional multiclass artifact is excluded from the cloud push;
+# the dashboard only needs the 2 MB binary model (artifacts/intrusion_detection_model.joblib)
+artifacts/multiclass_attack_classifier.joblib

@@ -1,0 +1,53 @@
+{
+  "model_name": "HistGradientBoosting (tuned)",
+  "best_params": {
+    "min_samples_leaf": 40,
+    "max_leaf_nodes": 63,
+    "max_iter": 300,
+    "learning_rate": 0.03,
+    "l2_regularization": 1.0
+  },
+  "decision_threshold": 0.48000000000000004,
+  "label_mapping": {
+    "0": "benign / normal traffic",
+    "1": "malicious / attack traffic"
+  },
+  "trained_on": "UNSW-NB15 official training partition (107,740 rows after exact-duplicate removal)",
+  "pipeline_steps": [
+    "feature_engineering (FeatureEngineer)",
+    "preprocess (ColumnTransformer: median impute; standard scale when scale=True; one-hot with infrequent buckets)",
+    "HistGradientBoostingClassifier"
+  ],
+  "excluded_columns": [
+    "id",
+    "label",
+    "attack_cat"
+  ],
+  "requires": {
+    "python": "3.12.10",
+    "scikit_learn": "1.9.1",
+    "package_src": "src/ (FeatureEngineer, build_preprocessor)"
+  },
+  "test_metrics_chosen_model": {
+    "n": 82332,
+    "threshold": 0.48000000000000004,
+    "accuracy": 0.871204391973959,
+    "balanced_accuracy": 0.8577955647344159,
+    "precision": 0.815387968613775,
+    "recall": 0.9902938321715344,
+    "f1": 0.8943698450013946,
+    "specificity": 0.7252972972972973,
+    "false_positive_rate": 0.2747027027027027,
+    "false_negative_rate": 0.009706167828465543,
+    "tp": 44892,
+    "tn": 26836,
+    "fp": 10164,
+    "fn": 440,
+    "matthews_corrcoef": 0.756267751799408,
+    "roc_auc": 0.9868105556363739,
+    "average_precision": 0.9902605242352266,
+    "brier_score": 0.07903796049994194,
+    "model": "HistGradientBoosting (tuned)",
+    "predict_time_s": 1.6882460117340088
+  }
+}

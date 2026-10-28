@@ -1,0 +1,83 @@
+{
+  "dataset_info": {
+    "name": "UNSW-NB15 (official partitioned release)",
+    "domain": "Cybersecurity - network intrusion detection",
+    "kaggle_source": "https://www.kaggle.com/datasets/mrwellsdavid/unsw-nb15",
+    "kaggle_files": [
+      "UNSW_NB15_training-set.csv",
+      "UNSW_NB15_testing-set.csv"
+    ],
+    "official_page": "https://research.unsw.edu.au/projects/unsw-nb15-dataset",
+    "mirror_used_for_automation": "https://huggingface.co/datasets/Mireu-Lab/UNSW-NB15",
+    "mirror_note": "Automated Kaggle download requires personal API credentials. To keep the project reproducible on any machine, the load script pulls the same official train/test partition (identical 45-column schema and row counts) from the public Mireu-Lab mirror of UNSW-NB15, and validates it against the documented official release structure before use. Students with a Kaggle account can instead download the files directly from the Kaggle listing above and drop them into data/.",
+    "original_creators": "N. Moustafa and J. Slay, Australian Centre for Cyber Security (ACCS), UNSW",
+    "accessed": "2026-10-26",
+    "binary_target": "label",
+    "label_mapping": {
+      "0": "benign/normal traffic",
+      "1": "malicious/attack traffic"
+    },
+    "multi_class_column": "attack_cat",
+    "id_column": "id"
+  },
+  "verified_facts": {
+    "train": {
+      "rows": 175341,
+      "columns": 45,
+      "unexpected_extra_columns": [],
+      "label_counts": {
+        "1": 119341,
+        "0": 56000
+      },
+      "benign_pct": 31.938,
+      "malicious_pct": 68.062,
+      "attack_cat_values": [
+        "Analysis",
+        "Backdoor",
+        "DoS",
+        "Exploits",
+        "Fuzzers",
+        "Generic",
+        "Normal",
+        "Reconnaissance",
+        "Shellcode",
+        "Worms"
+      ],
+      "label_attack_cat_mismatches": 0,
+      "duplicate_rows": 67601,
+      "id_range": [
+        1,
+        175341
+      ]
+    },
+    "test": {
+      "rows": 82332,
+      "columns": 45,
+      "unexpected_extra_columns": [],
+      "label_counts": {
+        "1": 45332,
+        "0": 37000
+      },
+      "benign_pct": 44.94,
+      "malicious_pct": 55.06,
+      "attack_cat_values": [
+        "Analysis",
+        "Backdoor",
+        "DoS",
+        "Exploits",
+        "Fuzzers",
+        "Generic",
+        "Normal",
+        "Reconnaissance",
+        "Shellcode",
+        "Worms"
+      ],
+      "label_attack_cat_mismatches": 0,
+      "duplicate_rows": 26387,
+      "id_range": [
+        1,
+        82332
+      ]
+    }
+  }
+}

@@ -1,0 +1,11 @@
+id,attack_cat,dur,rate,sbytes,dbytes,sttl,dttl,spkts,dpkts,ct_srv_src,ct_dst_src_ltm,label,error_type,attack_probability
+1,Normal,0.0,90909.09,496,0,254,0,2,0,2,2,0,FalsePositive,0.858
+2,Normal,0.0,125000.0,1762,0,254,0,2,0,2,2,0,FalsePositive,0.798
+3,Normal,0.0,200000.005,1068,0,254,0,2,0,3,3,0,FalsePositive,0.743
+4,Normal,0.0,166666.661,900,0,254,0,2,0,3,3,0,FalsePositive,0.668
+5,Normal,0.0,100000.002,2126,0,254,0,2,0,3,3,0,FalsePositive,0.772
+278,Fuzzers,0.524,28.645,674,268,254,252,10,6,7,7,1,FalseNegative,0.453
+284,Fuzzers,0.834,20.387,738,354,254,252,10,8,3,3,1,FalseNegative,0.324
+291,Fuzzers,0.695,24.464,546,354,254,252,10,8,9,6,1,FalseNegative,0.405
+292,Fuzzers,0.534,31.807,546,354,254,252,10,8,7,7,1,FalseNegative,0.44
+314,Fuzzers,1.19,14.287,718,354,254,252,10,8,3,3,1,FalseNegative,0.374

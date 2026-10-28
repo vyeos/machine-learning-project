@@ -1,0 +1,241 @@
+{
+  "target": {
+    "train_counts": {
+      "1": 119341,
+      "0": 56000
+    },
+    "test_counts": {
+      "1": 45332,
+      "0": 37000
+    },
+    "train_attack_share": 0.6806223302022916,
+    "test_attack_share": 0.5506000097167566,
+    "imbalance_ratio_train": 2.131089285714286
+  },
+  "attack_categories": {
+    "train_counts": {
+      "Normal": 56000,
+      "Generic": 40000,
+      "Exploits": 33393,
+      "Fuzzers": 18184,
+      "DoS": 12264,
+      "Reconnaissance": 10491,
+      "Analysis": 2000,
+      "Backdoor": 1746,
+      "Shellcode": 1133,
+      "Worms": 130
+    },
+    "test_counts": {
+      "Normal": 37000,
+      "Generic": 18871,
+      "Exploits": 11132,
+      "Fuzzers": 6062,
+      "DoS": 4089,
+      "Reconnaissance": 3496,
+      "Analysis": 677,
+      "Backdoor": 583,
+      "Shellcode": 378,
+      "Worms": 44
+    },
+    "train_share_normal": 0.3193776697977085
+  },
+  "feature_medians": {
+    "medians": [
+      {
+        "feature": "dur",
+        "median_benign": 0.0386025,
+        "median_malicious": 9e-06
+      },
+      {
+        "feature": "rate",
+        "median_benign": 1382.2566165,
+        "median_malicious": 111111.1072
+      },
+      {
+        "feature": "sbytes",
+        "median_benign": 1470.0,
+        "median_malicious": 200.0
+      },
+      {
+        "feature": "dbytes",
+        "median_benign": 1112.0,
+        "median_malicious": 0.0
+      },
+      {
+        "feature": "sttl",
+        "median_benign": 31.0,
+        "median_malicious": 254.0
+      },
+      {
+        "feature": "dttl",
+        "median_benign": 29.0,
+        "median_malicious": 0.0
+      },
+      {
+        "feature": "sload",
+        "median_benign": 431327.65625,
+        "median_malicious": 50666664.0
+      },
+      {
+        "feature": "dload",
+        "median_benign": 336120.64064999996,
+        "median_malicious": 0.0
+      },
+      {
+        "feature": "swin",
+        "median_benign": 255.0,
+        "median_malicious": 0.0
+      },
+      {
+        "feature": "dwin",
+        "median_benign": 255.0,
+        "median_malicious": 0.0
+      },
+      {
+        "feature": "tcprtt",
+        "median_benign": 0.000645,
+        "median_malicious": 0.0
+      },
+      {
+        "feature": "ct_dst_src_ltm",
+        "median_benign": 2.0,
+        "median_malicious": 5.0
+      },
+      {
+        "feature": "ct_srv_src",
+        "median_benign": 4.0,
+        "median_malicious": 5.0
+      },
+      {
+        "feature": "ct_state_ttl",
+        "median_benign": 0.0,
+        "median_malicious": 2.0
+      }
+    ]
+  },
+  "boxplots": {
+    "features": [
+      "dur",
+      "rate",
+      "sbytes",
+      "sttl",
+      "dttl",
+      "swin",
+      "ct_dst_src_ltm",
+      "ct_srv_src"
+    ]
+  },
+  "correlation": {
+    "top_positive_with_label": {
+      "sttl": 0.6927414405810755,
+      "ct_state_ttl": 0.577703980943965,
+      "ct_dst_sport_ltm": 0.35721333735374566,
+      "rate": 0.33797851137339235,
+      "ct_src_dport_ltm": 0.30557875347305635,
+      "ct_dst_src_ltm": 0.30385517566930914,
+      "ct_src_ltm": 0.23822507869534393,
+      "ct_dst_ltm": 0.22988728781104928
+    },
+    "top_negative_with_label": {
+      "dload": -0.39373937360737965,
+      "dmean": -0.34180630596095174,
+      "swin": -0.3336333938565034,
+      "dwin": -0.31962552095013247,
+      "stcpb": -0.25500603332934535,
+      "dtcpb": -0.25033957893665487
+    },
+    "top_15_abs": {
+      "sttl": 0.6927,
+      "ct_state_ttl": 0.5777,
+      "dload": -0.3937,
+      "ct_dst_sport_ltm": 0.3572,
+      "dmean": -0.3418,
+      "rate": 0.338,
+      "swin": -0.3336,
+      "dwin": -0.3196,
+      "ct_src_dport_ltm": 0.3056,
+      "ct_dst_src_ltm": 0.3039,
+      "stcpb": -0.255,
+      "dtcpb": -0.2503,
+      "ct_src_ltm": 0.2382,
+      "ct_dst_ltm": 0.2299,
+      "ct_srv_src": 0.229
+    }
+  },
+  "quality_visual_summary": {
+    "missing_cells_total": 0,
+    "duplicates": {
+      "Exact duplicates\n(training)": 67601,
+      "Exact duplicates\n(testing)": 26387,
+      "Train rows that also\nappear in testing": 940
+    }
+  },
+  "categorical": {
+    "proto": {
+      "by_category_share_malicious": {
+        "tcp": 0.5107,
+        "udp": 0.78,
+        "unas": 1.0,
+        "arp": 0.0,
+        "ospf": 0.9753,
+        "sctp": 1.0,
+        "any": 1.0,
+        "gre": 1.0
+      },
+      "category_value_counts": {
+        "tcp": 79946,
+        "udp": 63283,
+        "unas": 12084,
+        "arp": 2859,
+        "ospf": 2595,
+        "sctp": 1150,
+        "any": 300,
+        "gre": 225
+      }
+    },
+    "service": {
+      "by_category_share_malicious": {
+        "-": 0.6123,
+        "dns": 0.8416,
+        "http": 0.7144,
+        "smtp": 0.6878,
+        "ftp-data": 0.3612,
+        "ftp": 0.6447,
+        "ssh": 0.0084,
+        "pop3": 0.9964
+      },
+      "category_value_counts": {
+        "-": 94168,
+        "dns": 47294,
+        "http": 18724,
+        "smtp": 5058,
+        "ftp-data": 3995,
+        "ftp": 3428,
+        "ssh": 1302,
+        "pop3": 1105
+      }
+    },
+    "state": {
+      "by_category_share_malicious": {
+        "INT": 0.9305,
+        "FIN": 0.5223,
+        "CON": 0.0801,
+        "REQ": 0.5354,
+        "RST": 0.1446,
+        "ECO": 0.0,
+        "PAR": 0.0,
+        "URN": 0.0
+      },
+      "category_value_counts": {
+        "INT": 82275,
+        "FIN": 77825,
+        "CON": 13152,
+        "REQ": 1991,
+        "RST": 83,
+        "ECO": 12,
+        "PAR": 1,
+        "URN": 1
+      }
+    }
+  }
+}
