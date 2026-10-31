@@ -23,7 +23,7 @@ python -m src.train                  # ~6.2 min on a 20-core machine; writes res
 
 # 4. Interactive outputs
 jupyter lab Cybersecurity_Intrusion_Detection.ipynb   # fully executed notebook (repo root)
-streamlit run app\\app.py                                        # 4-page dashboard
+streamlit run app/app.py             # 4-page dashboard
 pytest                            # pipeline smoke tests
 ```
 
@@ -35,7 +35,7 @@ pytest                            # pipeline smoke tests
 | Access page | https://www.kaggle.com/datasets/mrwellsdavid/unsw-nb15 |
 | Download mirror used by `src/download_data.py` | https://huggingface.co/datasets/Mireu-Lab/UNSW-NB15 (no credentials; verified byte/row-compatible) |
 | Rows | Training partition 175,341 (deduplicated -> 107,740) &middot; Testing partition 82,332 (kept exactly as released) |
-| Columns | 45 per file (49 numeric flow features + 3 categorical in the modeling schema) |
+| Columns | 45 per file (42 model inputs: 39 numeric + 3 categorical; `id`, `label`, `attack_cat` excluded) |
 | Classes | Binary: benign vs malicious; attack families: Analysis, Backdoor, DoS, Exploits, Fuzzers, Generic, Normal, Reconnaissance, Shellcode, Worms |
 | Accessed date | 2026-10-26 |
 | License | Public academic release (verify the exact licence on the access page) |
@@ -64,9 +64,8 @@ Cybersecurity_Intrusion_Detection/          <- repo root (what GitHub sees)
 │                              git-ignored - rebuild it with `python -m src.train`)
 ├── data/                     UNSW-NB15 CSVs (git-ignored; recreated by src/download_data.py)
 ├── results/                  findings.md, model_comparison.csv, JSON tuning logs, figures/ ...
-├── scripts/                  Builders (notebook/report/documents) + package_project.py (ZIP)
 ├── src/                      data_loading, download_data, preprocessing, eda, evaluate,
-│                             train, predict (IntrusionPredictor + --demo/--batch CLI)
+│                             train, predict (IntrusionPredictor + --input/--output CLI)
 └── tests/                    pytest smoke tests
 ```
 

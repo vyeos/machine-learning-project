@@ -95,7 +95,8 @@ class IntrusionPredictor:
         return out
 
     def predict_record(self, record: dict) -> dict:
-        row = pd.DataFrame([record], columns=REQUIRED_FEATURES, dtype=object)
+        row = pd.DataFrame([record], columns=REQUIRED_FEATURES)
+        row[NUMERIC_FEATURES] = row[NUMERIC_FEATURES].apply(pd.to_numeric, errors="coerce")
         proba = self.pipeline.predict_proba(row[REQUIRED_FEATURES])[:, 1][0]
         label = int(proba >= self.threshold)
         return {"predicted_label": label,
@@ -142,8 +143,7 @@ def main() -> None:
     columns = ["id", "dur", "proto", "service", "state", "sbytes", "dbytes",
                "attack_probability", "predicted_label"]
     print(demo[columns].head(args.show).to_string(index=False))
-    out = demo.merge(pred, left_index=True, right_index=True)
-    out.to_csv(args.output, index=False)
+    demo.to_csv(args.output, index=False)
     print(f"Saved predictions to {args.output}")
 
 

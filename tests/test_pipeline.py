@@ -124,3 +124,15 @@ def test_train_reports_consistent_metrics():
     required = {"model", "accuracy", "precision", "recall", "f1", "roc_auc"}
     assert required <= set(frame.columns)
     assert frame[["accuracy", "precision", "recall", "f1", "roc_auc"]].notna().all().all()
+
+
+def test_predict_record_single_row():
+    """IntrusionPredictor.predict_record must score one raw flow dict."""
+    if not (ROOT / "artifacts" / "intrusion_detection_model.joblib").exists():
+        pytest.skip("Run `python -m src.train` first to create the artifact.")
+    from src.predict import IntrusionPredictor
+
+    record = _fake_unsw(1).drop(columns=["id", "label", "attack_cat"]).iloc[0].to_dict()
+    result = IntrusionPredictor().predict_record(record)
+    assert result["predicted_label"] in (0, 1)
+    assert 0.0 <= result["attack_probability"] <= 1.0

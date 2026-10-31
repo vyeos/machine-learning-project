@@ -46,18 +46,18 @@ def load_csv(name: str):
 def fig(name: str, caption: str):
     p = FIGS / name
     if p.exists():
-        st.image(str(p), caption=caption, use_container_width=True)
+        st.image(str(p), caption=caption, width="stretch")
     else:
         st.info(f"Figure missing: {name} (run `python -m src.train` first)")
 
 
 def page_overview():
     st.title("🛡️ Project overview - UNSW-NB15 intrusion detection")
-    facts = load_json("dataset_facts.json")
+    facts = load_json("dataset_facts.json").get("verified_facts", {})
     c1, c2, c3, c4 = st.columns(4)
     c1.metric("Training rows (raw)", f"{facts.get('train', {}).get('rows', 0):,}")
     c2.metric("Test rows (untouched)", f"{facts.get('test', {}).get('rows', 0):,}")
-    c3.metric("Attack share (train)", "68.06%")
+    c3.metric("Attack share (train)", f"{facts.get('train', {}).get('malicious_pct', 0):.2f}%")
     c4.metric("Deduplicated train", "107,740")
     fig("fig01_target_distribution.png", "Class balance (benign vs malicious)")
     fig("fig02_attack_categories.png", "Attack families in both partitions")
@@ -96,7 +96,7 @@ def page_predict():
         return
     demo = load_csv("demo_predictions.csv")
     st.write("Uploading UNSW-NB15-shaped rows predicts malicious probability for each.")
-    uploaded = st.file_uploader("Upload CSV with the 49 UNSW-NB15 flow features",
+    uploaded = st.file_uploader("Upload CSV with the 42 UNSW-NB15 flow features",
                                type=("csv",))
     if uploaded is not None:
         try:
